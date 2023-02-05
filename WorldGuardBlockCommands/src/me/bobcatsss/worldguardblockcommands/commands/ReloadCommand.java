@@ -22,7 +22,7 @@ public class ReloadCommand implements CommandExecutor {
 		}
 		if(args.length == 0) {
 			if(args[0].equalsIgnoreCase("reload")) {
-				plugin.reloadConfig();
+				plugin.reloadConfigData();
 				sender.sendMessage(ChatColor.GREEN + "Config has been reloaded.");
 				return true;
 			}
