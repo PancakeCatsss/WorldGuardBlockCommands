@@ -24,7 +24,7 @@ public class WorldGuardBlockCommands extends JavaPlugin {
 	public void onEnable() {
 		saveDefaultConfig();
 		worldGuardUtils = new WorldGuardUtils();
-		reloadConfig();
+		reloadConfigData();
 		getCommand("worldguardblockcommands").setExecutor(new ReloadCommand(this));
 		registerHandlers();
 	}
@@ -34,7 +34,7 @@ public class WorldGuardBlockCommands extends JavaPlugin {
 		pm.registerEvents(new PlayerMoveHandler(this), this);
 	}
 	
-    public void reloadConfig() {
+    public void reloadConfigData() {
     	commands.clear();
 		worldGuardRegionName = getConfig().getString("Worldguard-Region", null);
 		if(getConfig().isConfigurationSection("Blocks")) {
